@@ -16,7 +16,6 @@ public abstract class ApplicationDatabase extends RoomDatabase {
     private static ApplicationDatabase instance;
 
     public abstract NoteDao noteDao();
-
     // Create database
     public static ApplicationDatabase getApplicationDatabase(Context context){
         if (instance == null){

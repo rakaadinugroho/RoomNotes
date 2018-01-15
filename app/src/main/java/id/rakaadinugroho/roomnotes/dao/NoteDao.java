@@ -9,6 +9,8 @@ import android.arch.persistence.room.Update;
 import java.util.List;
 
 import id.rakaadinugroho.roomnotes.entities.Note;
+import io.reactivex.Observable;
+import io.reactivex.Single;
 
 /**
  * Created by Raka on 1/13/18.
@@ -16,7 +18,7 @@ import id.rakaadinugroho.roomnotes.entities.Note;
 @Dao
 public interface NoteDao {
     @Query("SELECT * FROM note")
-    List<Note> getNotes();
+    Single<List<Note>> getNotes();
 
     @Insert
     void insertNote(Note... note);
